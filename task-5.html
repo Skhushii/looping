@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-5</title>
+    <!-- Write javascript program to print 1 to n number and find even number using for loop -->
+</head>
+<body>
+    <h2>Print Numbers from 1 to n and Highlight Even Numbers</h2>
+
+    Enter a number n: <input type="number" id="numberInput">
+    <button onclick="printNumbers()">Print</button>
+
+    <div id="output"></div>
+
+    <script>
+        function printNumbers() {
+          
+            let n = parseInt(document.getElementById('numberInput').value);
+            document.getElementById('output').innerHTML = '';
+            if (isNaN(n) || n <= 0) {
+                alert('Please enter a valid positive number.');
+                return;
+            }
+            for (let i = 1; i <= n; i++) {
+                if (i % 2 === 0) {
+                    document.getElementById('output').innerHTML += '<span style="color: blue;">' + i + ' (Even)</span><br>';
+                } else {
+                    document.getElementById('output').innerHTML += i + '<br>';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

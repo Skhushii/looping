@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-6</title>
+    <!-- Write javascript program to print 1 to n number  and all number sum using do while loop  -->
+</head>
+<body>
+    <h2>Print Numbers from 1 to n and Their Sum</h2>
+    
+    Enter a number n: <input type="number" id="numberInput">
+    <button onclick="printNumbersAndSum()">Print & Sum</button>
+
+    <div id="output"></div>
+
+    <div id="sumOutput"></div>
+
+    <script>
+        function printNumbersAndSum() {
+            let n = parseInt(document.getElementById('numberInput').value);
+            document.getElementById('output').innerHTML = '';
+            document.getElementById('sumOutput').innerHTML = '';
+            if (isNaN(n) || n <= 0) {
+                alert('Please enter a valid positive number.');
+                return;
+            }
+
+            let counter = 1;
+            let sum = 0;
+            do {
+                document.getElementById('output').innerHTML += counter + '<br>';
+                sum += counter;
+                counter++;
+            } while (counter <= n);
+            document.getElementById('sumOutput').innerHTML = "Sum: " + sum;
+        }
+    </script>
+</body>
+</html>

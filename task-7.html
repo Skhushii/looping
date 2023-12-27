@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-7</title>
+    <!-- Write javascript program to print multiplication table of any number using while loop -->
+</head>
+<body>
+    <h2>Multiplication Table</h2>
+    
+    Enter a number: <input type="number" id="numberInput">
+    <button onclick="printTable()">Generate Table</button>
+    <div id="output"></div>
+
+    <script>
+        function printTable() {
+            let num = parseInt(document.getElementById('numberInput').value);
+            document.getElementById('output').innerHTML = '';
+            if (isNaN(num)) {
+                alert('Please enter a valid number.');
+                return;
+            }
+
+            let counter = 1;
+            while (counter <= 10) {
+                let result = num * counter;
+                document.getElementById('output').innerHTML += `${num} x ${counter} = ${result}<br>`;
+                counter++;
+            }
+        }
+    </script>
+</body>
+</html>

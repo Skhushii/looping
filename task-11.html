@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-11</title>
+    <!-- Write javascript program Check weather num is prime or not using for loop -->
+</head>
+<body>
+    <h2>Check if Number is Prime</h2>
+    Enter a number: <input type="number" id="numberInput">
+    <button onclick="checkPrime()">Check</button>
+    <div id="output"></div>
+
+    <script>
+        function checkPrime() {
+            let num = parseInt(document.getElementById('numberInput').value);
+            document.getElementById('output').innerHTML = '';
+            if (isNaN(num) || num <= 1) {
+                document.getElementById('output').innerHTML = `${num} is not a prime number.`;
+                return;
+            }
+
+            let isPrime = true;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                document.getElementById('output').innerHTML = `${num} is a prime number.`;
+            } else {
+                document.getElementById('output').innerHTML = `${num} is not a prime number.`;
+            }
+        }
+    </script>
+</body>
+</html>

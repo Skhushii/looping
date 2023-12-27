@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-10</title>
+    <!-- Write javascript program to calculate factorial of a number using while loop -->
+</head>
+<body>
+    <h2>Calculate Factorial</h2>
+
+    Enter a number: <input type="number" id="numberInput">
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    <div id="output"></div>
+
+    <script>
+        function calculateFactorial() {
+            let num = parseInt(document.getElementById('numberInput').value);
+            document.getElementById('output').innerHTML = '';
+            if (isNaN(num) || num < 0) {
+                alert('Please enter a valid non-negative number.');
+                return;
+            }
+
+            let factorial = 1;
+            let counter = num;
+            while (counter > 1) {
+                factorial *= counter;
+                counter--;
+            }
+            document.getElementById('output').innerHTML = `Factorial of ${num} is: ${factorial}`;
+        }
+    </script>
+</body>
+</html>

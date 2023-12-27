@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-13</title>
+    <!-- Write javascript program print out Fibonacci series  // (0,1,1,2,3,5,8…)  -->
+</head>
+<body>
+    <h2>Fibonacci Series</h2>
+    
+    Enter how many Fibonacci numbers you'd like to see: <input type="number" id="numberInput">
+    <button onclick="generateFibonacci()">Generate</button>
+    <div id="output"></div>
+
+    <script>
+        function generateFibonacci() {
+            let count = parseInt(document.getElementById('numberInput').value);
+            document.getElementById('output').innerHTML = '';
+            if (isNaN(count) || count <= 0) {
+                alert('Please enter a valid positive number.');
+                return;
+            }
+
+            let a = 0, b = 1, nextTerm;
+            for (let i = 1; i <= count; i++) {
+                document.getElementById('output').innerHTML += a + ", ";
+                nextTerm = a + b;
+                a = b;
+                b = nextTerm;
+            }
+        }
+    </script>
+</body>
+</html>
